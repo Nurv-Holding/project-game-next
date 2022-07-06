@@ -1,7 +1,12 @@
+import Layout from "../components/Layout"
 
 const Crash = () => {
   return (
-    <div>Crash</div>
+    <Layout>
+      <div className="h-screen">
+        Crash
+      </div>
+    </Layout>
   )
 }
 
