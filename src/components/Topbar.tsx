@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Login from "./Login";
 import {AiOutlineClose} from 'react-icons/ai';
 import Cadastro from "./Cadastro";
@@ -7,6 +7,18 @@ import Cadastro from "./Cadastro";
 const Topbar = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [showCadastro, setShowCadastro] = useState(false);
+  const [user, setUser] = useState(false);
+
+  useEffect(() => {
+    const loadingStorage = async () => {
+      const storageUser = localStorage.getItem('@Auth:user');
+
+      if (storageUser) {
+        setUser(true);
+      }
+    };
+    loadingStorage();
+  }, []);
 
   const handleOpenLogin = () => {
     setShowLogin(!showLogin);
