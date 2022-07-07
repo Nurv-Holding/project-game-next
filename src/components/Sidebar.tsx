@@ -32,7 +32,7 @@ const Sidebar = () => {
   }
 
   return (
-    <nav className='w-full xl:w-[200px] xl:h-screen xl:border-r xl:border-yellow-500'>
+    <nav className='w-full xl:w-[200px] xl:h-full xl:border-r xl:border-yellow-500'>
       {/* Menu Desktop */}
       <div className='py-5 hidden xl:block'>
         <ul className='max-w-[90px] mx-auto flex flex-col justify-center'>

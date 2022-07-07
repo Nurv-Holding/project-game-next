@@ -1,4 +1,5 @@
 import Layout from "../components/Layout"
+import Unity, {UnityContext} from 'react-unity-webgl';
 import { useState, useEffect } from "react"
 import axios from "axios";
 
@@ -24,6 +25,13 @@ const Crash = () => {
   const [lucro8, setLucro8] = useState('')
   const [lucro9, setLucro9] = useState('')
   const [lucro10, setLucro10] = useState('')
+
+  const unityContext = new UnityContext({
+    loaderUrl: 'crash/crash.loader.js',
+    dataUrl: 'crash/crash.data',
+    frameworkUrl: 'crash/crash.framework.js',
+    codeUrl: 'crash/crash.wasm',
+  });
 
   useEffect(() => {
     const loadingStorage = async () => {
@@ -66,34 +74,49 @@ const Crash = () => {
 
   return (
     <Layout>
-      <div className="h-screen">
-          <div className="flex gap-4 items-center justify-center flex-col">
-            <p>User: {email}</p>
+      <div className="h-auto w-full flex flex-col gap-6 items-center py-5">
+        <div>
+          <Unity className='w-full h-[250px] xl:w-[950px] xl:h-[600px] rounded-md' unityContext={unityContext} />
+        </div>
 
-            <p>Apostas</p> 
-            <p>{aposta1}</p> 
-            <p>{aposta2}</p> 
-            <p>{aposta3}</p> 
-            <p>{aposta4}</p> 
-            <p>{aposta5}</p>
-            <p>{aposta6}</p> 
-            <p>{aposta7}</p> 
-            <p>{aposta8}</p> 
-            <p>{aposta9}</p> 
-            <p>{aposta10}</p>
-
-            <p>Lucro</p>
-            <p>{lucro1}</p>
-            <p>{lucro2}</p>
-            <p>{lucro3}</p>
-            <p>{lucro4}</p>
-            <p>{lucro5}</p>
-            <p>{lucro6}</p>
-            <p>{lucro7}</p>
-            <p>{lucro8}</p>
-            <p>{lucro9}</p>
-            <p>{lucro10}</p>
+        <div className="flex w-full px-2 xl:px-0 bg-gray-600 rounded-md xl:w-[650px] justify-center xl:flex-row flex-1">
+          <div className='flex-1 border-r border-yellow-500'>
+            <p className='border-b border-yellow-500 text-center text-semibold'>Usuarios</p>
+            <p className='flex flex-col items-center justify-center'>{email}</p>
           </div>
+
+          <div className='flex-1 border-r border-yellow-500'>
+            <p className='border-b border-yellow-500 text-center text-semibold'>Apostas</p>
+            <ul className='flex flex-col items-center justify-center'> 
+              <li>{aposta1}</li> 
+              <li>{aposta2}</li> 
+              <li>{aposta3}</li> 
+              <li>{aposta4}</li> 
+              <li>{aposta5}</li>
+              <li>{aposta6}</li>
+              <li>{aposta7}</li> 
+              <li>{aposta8}</li> 
+              <li>{aposta9}</li> 
+              <li>{aposta10}</li>
+            </ul>
+          </div>
+
+          <div className='flex-1 w-full'>
+            <p className='border-b border-yellow-500 text-center text-semibold'>Lucro</p>
+            <ul className='flex flex-col items-center justify-center'>
+              <li>{lucro1}</li>
+              <li>{lucro2}</li>
+              <li>{lucro3}</li>
+              <li>{lucro4}</li>
+              <li>{lucro5}</li>
+              <li>{lucro6}</li>
+              <li>{lucro7}</li>
+              <li>{lucro8}</li>
+              <li>{lucro9}</li>
+              <li>{lucro10}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </Layout>
   )
