@@ -16,6 +16,7 @@ const Login = () => {
     }).then((response) => {
       if (response.data.loggedIn === true) {
         localStorage.setItem('@Auth:user', response.data.loggedIn);
+        localStorage.setItem('@user:email', response.data.email);
         window.location.reload();
       }
 

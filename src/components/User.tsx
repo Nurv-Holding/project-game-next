@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useRouter } from 'next/router'
 
 const User = () => {
@@ -7,10 +6,14 @@ const User = () => {
   const router = useRouter()
 
   useEffect(() => {
-    axios.get('http://192.241.151.105/user', {
-    }).then((response) => {
-        setEmail(response.data.user_email);
-    })
+    const loadingStorage = async () => {
+      const storageUser = localStorage.getItem('@user:email');
+
+      if (storageUser) {
+        setEmail(storageUser);
+      }
+    };
+    loadingStorage();
   })
 
   const signOut = () => {
