@@ -7,7 +7,7 @@ const Home = () => {
     <div>
       <Topbar />
       <main>
-        <div className='md:relative h-screen md:h-[450px] lg:h-[600px] overflow-y-hidden flex flex-col gap-4'>
+        <div className='md:relative h-auto pb-10 md:h-[450px] lg:h-[600px] overflow-y-hidden flex flex-col gap-4'>
           <div className='md:absolute'>
             <video 
               className='w-full'
