@@ -12,8 +12,6 @@ const Home = () => {
             <video 
               className='w-full'
               autoPlay 
-              muted 
-              loop
             >
               <source src='/video/banner.mp4' type='video/mp4'  />
             </video>
