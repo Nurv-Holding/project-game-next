@@ -36,7 +36,7 @@ const Roleta = () => {
     loadingStorage();
   })
 
-  axios.get('http://192.241.151.105/apostas-roleta', {
+  axios.get('https://nurvtreinamentos.com/apostas-roleta', {
   }).then((response) => {
     setAposta1(response.data[0]);
     setAposta2(response.data[1]);
@@ -50,7 +50,7 @@ const Roleta = () => {
     setAposta10(response.data[9]);
   })
 
-  axios.get('http://192.241.151.105/historico-roleta', {
+  axios.get('https://nurvtreinamentos.com/historico-roleta', {
   }).then((response) => {
     setLucro1(response.data[0]);
     setLucro2(response.data[1]);

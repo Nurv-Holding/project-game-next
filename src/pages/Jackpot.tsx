@@ -36,7 +36,7 @@ const Jackpot = () => {
     loadingStorage();
   })
 
-  axios.get('http://192.241.151.105/apostas-jackpot', {
+  axios.get('https://nurvtreinamentos.com/apostas-jackpot', {
   }).then((response) => {
     setAposta1(response.data[0]);
     setAposta2(response.data[1]);
@@ -50,7 +50,7 @@ const Jackpot = () => {
     setAposta10(response.data[9]);
   })
 
-  axios.get('http://192.241.151.105/historico-jackpot', {
+  axios.get('https://nurvtreinamentos.com/historico-jackpot', {
   }).then((response) => {
     setLucro1(response.data[0]);
     setLucro2(response.data[1]);

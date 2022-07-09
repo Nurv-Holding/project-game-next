@@ -44,7 +44,7 @@ const Crash = () => {
     loadingStorage();
   })
 
-  axios.get('http://192.241.151.105/apostas-crash', {
+  axios.get('https://nurvtreinamentos.com/apostas-crash', {
   }).then((response) => {
     setAposta1(response.data[0]);
     setAposta2(response.data[1]);
@@ -58,7 +58,7 @@ const Crash = () => {
     setAposta10(response.data[9]);
   })
 
-  axios.get('http://192.241.151.105/historico-crash', {
+  axios.get('https://nurvtreinamentos.com/historico-crash', {
   }).then((response) => {
     setLucro1(response.data[0]);
     setLucro2(response.data[1]);

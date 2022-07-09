@@ -19,7 +19,7 @@ const Cadastro = () => {
       } else if (password !== repeatPassword) {
         toast.error('As senhas precisam ser iguais');
       } else {
-        axios.post('http://192.241.151.105/register', {
+        axios.post('https://nurvtreinamentos.com/register', {
           email,
           password,
           repeatPassword,

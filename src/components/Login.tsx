@@ -10,7 +10,7 @@ const Login = () => {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     
-    axios.post('http://192.241.151.105/login', {
+    axios.post('https://nurvtreinamentos.com/login', {
         email,
         password,
     }).then((response) => {
